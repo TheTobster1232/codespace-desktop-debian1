@@ -2,12 +2,6 @@
     "name": "Codespace Desktop Debian",
     "dockerFile": "Dockerfile",
     "runArgs": ["--privileged"],
-    "postCreateCommand": "chmod +x start-desktop.sh",
-    "customizations": {
-        "vscode": {
-            "settings": {},
-            "extensions": []
-        }
-    },
+    "postCreateCommand": "chmod +x .devcontainer/start-desktop.sh .devcontainer/chromium-nosandbox.sh",
     "forwardPorts": [6082]
 }
