@@ -45,11 +45,11 @@ The desktop will load immediately. No password is required.
 Applications Menu → Internet → Firefox ESR  
 Applications Menu → Internet → Chromium (no‑sandbox)
 
-Chromium must be launched using the included no‑sandbox script:
+Chromium **must** be launched using the included no‑sandbox script:
 
 ./.devcontainer/chromium-nosandbox.sh
 
-This is required because Codespaces containers do not support Chromium’s sandbox.
+This is required because Codespaces containers run as root and do not support Chromium’s sandbox.
 
 ### Audio
 PulseAudio starts automatically.  
