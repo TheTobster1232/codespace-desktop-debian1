@@ -45,11 +45,17 @@ The desktop will load immediately. No password is required.
 Applications Menu → Internet → Firefox ESR  
 Applications Menu → Internet → Chromium (no‑sandbox)
 
-Chromium **must** be launched using the included no‑sandbox script:
+Chromium **must** be launched inside the XFCE desktop**, not from the Codespaces terminal.
+
+Use the included launcher:
+
+Applications Menu → Internet → Chromium (no‑sandbox)
+
+or manually inside XFCE’s terminal:
 
 ./.devcontainer/chromium-nosandbox.sh
 
-This is required because Codespaces containers run as root and do not support Chromium’s sandbox.
+Launching Chromium from the Codespaces terminal will fail because it is outside the graphical environment.
 
 ### Audio
 PulseAudio starts automatically.  
