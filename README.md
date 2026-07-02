@@ -2,13 +2,13 @@
 
 This repository provides a full Linux desktop environment inside GitHub Codespaces with:
 
-• XFCE desktop
-• TigerVNC
-• noVNC
-• Firefox ESR
-• Chromium (no‑sandbox launcher included)
-• PulseAudio (working audio)
-• Smooth video playback
+• XFCE desktop  
+• TigerVNC  
+• noVNC  
+• Firefox ESR  
+• Chromium (no‑sandbox launcher included)  
+• PulseAudio (working audio)  
+• Smooth video playback  
 
 It is designed to be stable, fast, and easy to launch inside any Codespace.
 
@@ -28,9 +28,9 @@ Wait 5–10 seconds for the desktop to start.
 
 ## Open the Desktop (noVNC Viewer)
 
-1. Open the Ports tab in Codespaces.
-2. Find port 6082.
-3. Click Open in Browser.
+1. Open the Ports tab in Codespaces.  
+2. Find port 6082.  
+3. Click Open in Browser.  
 4. Add /vnc.html to the end of the URL.
 
 Example:
@@ -45,10 +45,14 @@ The desktop will load immediately. No password is required.
 Applications Menu → Internet → Firefox ESR  
 Applications Menu → Internet → Chromium (no‑sandbox)
 
-Chromium provides the best video playback performance.
+Chromium must be launched using the included no‑sandbox script:
+
+./.devcontainer/chromium-nosandbox.sh
+
+This is required because Codespaces containers do not support Chromium’s sandbox.
 
 ### Audio
-PulseAudio starts automatically.
+PulseAudio starts automatically.  
 Websites and apps that use audio will play sound through the browser.
 
 ## Video Playback Tips
@@ -68,15 +72,15 @@ If the desktop does not appear:
 • Confirm port 6082 is open  
 • Rebuild the Codespace if needed  
 
-If you see Recovery Mode, your Dockerfile failed to build.
+If you see Recovery Mode, your Dockerfile failed to build.  
 Recreate the Codespace after fixing the Dockerfile.
 
 ## Repository Structure
 
-.devcontainer/
-    Dockerfile
-    devcontainer.json
-    start-desktop.sh
-    chromium-nosandbox.sh
+.devcontainer/  
+    Dockerfile  
+    devcontainer.json  
+    start-desktop.sh  
+    chromium-nosandbox.sh  
 
 README.md
