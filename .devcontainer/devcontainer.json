@@ -1,0 +1,13 @@
+{
+    "name": "Codespace Desktop Debian",
+    "dockerFile": "Dockerfile",
+    "runArgs": ["--privileged"],
+    "postCreateCommand": "chmod +x start-desktop.sh",
+    "customizations": {
+        "vscode": {
+            "settings": {},
+            "extensions": []
+        }
+    },
+    "forwardPorts": [6082]
+}
