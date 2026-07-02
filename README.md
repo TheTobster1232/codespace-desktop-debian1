@@ -1,4 +1,4 @@
-# Codespace Desktop (Debian + XFCE + Audio)
+# Codespace Desktop (Debian + XFCE + Audio + Chromium + Firefox)
 
 This repository provides a full Linux desktop environment inside GitHub Codespaces with:
 
@@ -10,27 +10,34 @@ This repository provides a full Linux desktop environment inside GitHub Codespac
 • PulseAudio (working audio)
 • Smooth video playback
 
+It is designed to be stable, fast, and easy to launch inside any Codespace.
+
 ## Start the Desktop
 
 Open a Codespace for this repository.
 
-In the terminal, run:
+In the terminal, make the start script executable:
 
-.devcontainer/start-desktop.sh
+chmod +x .devcontainer/start-desktop.sh
+
+Then start the desktop:
+
+./.devcontainer/start-desktop.sh
 
 Wait 5–10 seconds for the desktop to start.
 
 ## Open the Desktop (noVNC Viewer)
 
-1. Open the Ports tab.
+1. Open the Ports tab in Codespaces.
 2. Find port 6082.
 3. Click Open in Browser.
 4. Add /vnc.html to the end of the URL.
 
 Example:
+
 https://<codespace-name>-6082.app.github.dev/vnc.html
 
-The desktop loads immediately. No password is required.
+The desktop will load immediately. No password is required.
 
 ## Using the Desktop
 
@@ -38,10 +45,11 @@ The desktop loads immediately. No password is required.
 Applications Menu → Internet → Firefox ESR  
 Applications Menu → Internet → Chromium
 
-Chromium provides the best video playback.
+Chromium provides the best video playback performance.
 
 ### Audio
-PulseAudio is enabled automatically.
+PulseAudio starts automatically.  
+Websites and apps that use audio will play sound through the browser.
 
 ## Video Playback Tips
 
@@ -56,15 +64,18 @@ If the desktop does not appear:
 
 • Run the start script again  
 • Refresh the VNC page  
-• Ensure /vnc.html is added  
+• Ensure /vnc.html is added to the URL  
 • Confirm port 6082 is open  
-• Rebuild the Codespace  
+• Rebuild the Codespace if needed  
+
+If you see Recovery Mode, your Dockerfile failed to build.  
+Recreate the Codespace after fixing the Dockerfile.
 
 ## Repository Structure
 
 .devcontainer/
-• Dockerfile
-• devcontainer.json
-• start-desktop.sh
+    Dockerfile
+    devcontainer.json
+    start-desktop.sh
 
 README.md
